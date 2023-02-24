@@ -4,12 +4,14 @@
  */
 package Heroes;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Daniel
  */
 public class HeroesPrincipal extends javax.swing.JFrame {
-
+ArrayList <Personajes> personajitos= new ArrayList();
     /**
      * Creates new form HeroesPrincipal
      */
@@ -26,113 +28,129 @@ public class HeroesPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jFrame2 = new javax.swing.JFrame();
-        jPanel1 = new javax.swing.JPanel();
+        AgregarHeroes = new javax.swing.JFrame();
+        AgregarHeroes_ = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        tf_debilidad = new javax.swing.JTextField();
+        tf_nombre = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        tf_poder = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jFormattedTextField1 = new javax.swing.JFormattedTextField();
+        tf_hp = new javax.swing.JFormattedTextField();
         jLabel6 = new javax.swing.JLabel();
-        jFormattedTextField2 = new javax.swing.JFormattedTextField();
+        tf_fuerza = new javax.swing.JFormattedTextField();
         jLabel7 = new javax.swing.JLabel();
-        jFormattedTextField3 = new javax.swing.JFormattedTextField();
+        tf_agilidad = new javax.swing.JFormattedTextField();
         jLabel8 = new javax.swing.JLabel();
-        jFormattedTextField4 = new javax.swing.JFormattedTextField();
+        tf_agilidadM = new javax.swing.JFormattedTextField();
         bt_add = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        combo_universo = new javax.swing.JComboBox<>();
         jp_Principal = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         bt_Agregar = new javax.swing.JButton();
 
-        jFrame2.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        AgregarHeroes.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(132, 216, 216));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        AgregarHeroes_.setBackground(new java.awt.Color(132, 216, 216));
+        AgregarHeroes_.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 153));
         jLabel2.setText("HP (Puntos de Vida)");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 20, 180, 40));
+        AgregarHeroes_.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 20, 180, 40));
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 153));
         jLabel3.setText("Nombre");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 160, 40));
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 210, 30));
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 210, 30));
+        AgregarHeroes_.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 160, 40));
+        AgregarHeroes_.add(tf_debilidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 210, 30));
+        AgregarHeroes_.add(tf_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 210, 30));
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 153));
         jLabel4.setText("Super Poder");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 160, 40));
-        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 210, 30));
+        AgregarHeroes_.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 160, 40));
+
+        tf_poder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf_poderActionPerformed(evt);
+            }
+        });
+        AgregarHeroes_.add(tf_poder, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 210, 30));
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 0, 153));
         jLabel5.setText("Debilidad");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 160, 40));
+        AgregarHeroes_.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 160, 40));
 
-        jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
-        jFormattedTextField1.addActionListener(new java.awt.event.ActionListener() {
+        tf_hp.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
+        tf_hp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jFormattedTextField1ActionPerformed(evt);
+                tf_hpActionPerformed(evt);
             }
         });
-        jPanel1.add(jFormattedTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 60, 180, 30));
+        AgregarHeroes_.add(tf_hp, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 60, 180, 30));
 
         jLabel6.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 153));
         jLabel6.setText("Fuerza");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 160, 40));
+        AgregarHeroes_.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 160, 40));
 
-        jFormattedTextField2.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
-        jFormattedTextField2.addActionListener(new java.awt.event.ActionListener() {
+        tf_fuerza.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
+        tf_fuerza.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jFormattedTextField2ActionPerformed(evt);
+                tf_fuerzaActionPerformed(evt);
             }
         });
-        jPanel1.add(jFormattedTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 210, 30));
+        AgregarHeroes_.add(tf_fuerza, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 210, 30));
 
         jLabel7.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 0, 153));
         jLabel7.setText("Agilidad");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 160, 40));
+        AgregarHeroes_.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 160, 40));
 
-        jFormattedTextField3.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
-        jFormattedTextField3.addActionListener(new java.awt.event.ActionListener() {
+        tf_agilidad.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
+        tf_agilidad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jFormattedTextField3ActionPerformed(evt);
+                tf_agilidadActionPerformed(evt);
             }
         });
-        jPanel1.add(jFormattedTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, 210, 30));
+        AgregarHeroes_.add(tf_agilidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, 210, 30));
 
         jLabel8.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 0, 153));
         jLabel8.setText("Agilidad Mental");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, 160, 40));
+        AgregarHeroes_.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, 160, 40));
 
-        jFormattedTextField4.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
-        jFormattedTextField4.addActionListener(new java.awt.event.ActionListener() {
+        tf_agilidadM.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getIntegerInstance())));
+        tf_agilidadM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jFormattedTextField4ActionPerformed(evt);
+                tf_agilidadMActionPerformed(evt);
             }
         });
-        jPanel1.add(jFormattedTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 460, 210, 30));
+        AgregarHeroes_.add(tf_agilidadM, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 460, 210, 30));
 
         bt_add.setBackground(new java.awt.Color(0, 0, 153));
         bt_add.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
         bt_add.setForeground(new java.awt.Color(153, 204, 255));
         bt_add.setText("Agregar");
-        jPanel1.add(bt_add, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 390, 180, 100));
+        bt_add.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_addMouseClicked(evt);
+            }
+        });
+        AgregarHeroes_.add(bt_add, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 230, 180, 100));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, 180, 50));
+        combo_universo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Marvel", "DC", "Capcom", "MK" }));
+        combo_universo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                combo_universoActionPerformed(evt);
+            }
+        });
+        AgregarHeroes_.add(combo_universo, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, 180, 50));
 
-        jFrame2.getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 550));
+        AgregarHeroes.getContentPane().add(AgregarHeroes_, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 550));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(102, 0, 0));
@@ -150,6 +168,11 @@ public class HeroesPrincipal extends javax.swing.JFrame {
         bt_Agregar.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 24)); // NOI18N
         bt_Agregar.setForeground(new java.awt.Color(102, 0, 0));
         bt_Agregar.setText("Agregar Personaje");
+        bt_Agregar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_AgregarMouseClicked(evt);
+            }
+        });
         jp_Principal.add(bt_Agregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 230, 60));
 
         getContentPane().add(jp_Principal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 500));
@@ -157,21 +180,49 @@ public class HeroesPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jFormattedTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField1ActionPerformed
+    private void tf_hpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_hpActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jFormattedTextField1ActionPerformed
+    }//GEN-LAST:event_tf_hpActionPerformed
 
-    private void jFormattedTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField2ActionPerformed
+    private void tf_fuerzaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_fuerzaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jFormattedTextField2ActionPerformed
+    }//GEN-LAST:event_tf_fuerzaActionPerformed
 
-    private void jFormattedTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField3ActionPerformed
+    private void tf_agilidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_agilidadActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jFormattedTextField3ActionPerformed
+    }//GEN-LAST:event_tf_agilidadActionPerformed
 
-    private void jFormattedTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField4ActionPerformed
+    private void tf_agilidadMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_agilidadMActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jFormattedTextField4ActionPerformed
+    }//GEN-LAST:event_tf_agilidadMActionPerformed
+
+    private void combo_universoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo_universoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_combo_universoActionPerformed
+
+    private void bt_AgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_AgregarMouseClicked
+        //Ir a la pantalla de agregar
+        AgregarHeroes.setVisible(true);
+        AgregarHeroes.pack();
+    }//GEN-LAST:event_bt_AgregarMouseClicked
+
+    private void bt_addMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_addMouseClicked
+        String nombreP=tf_nombre.getText();
+        String poderP=tf_poder.getText();
+        String debilidadP=tf_debilidad.getText();
+        int fuerzaP= Integer.parseInt(tf_fuerza.getText());
+        int agilidadP= Integer.parseInt(tf_agilidad.getText());
+        int agilidadMP= Integer.parseInt(tf_agilidadM.getText());
+        int hpP= Integer.parseInt(tf_hp.getText());
+        String universoP=((String)(combo_universo.getSelectedItem()));
+        
+        Personajes heroes= new Personajes(nombreP,poderP,debilidadP,fuerzaP,agilidadP,agilidadMP,hpP,universoP);
+        personajitos.add(heroes);
+    }//GEN-LAST:event_bt_addMouseClicked
+
+    private void tf_poderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_poderActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_poderActionPerformed
 
     /**
      * @param args the command line arguments
@@ -209,14 +260,11 @@ public class HeroesPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JFrame AgregarHeroes;
+    private javax.swing.JPanel AgregarHeroes_;
     private javax.swing.JButton bt_Agregar;
     private javax.swing.JButton bt_add;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JFormattedTextField jFormattedTextField1;
-    private javax.swing.JFormattedTextField jFormattedTextField2;
-    private javax.swing.JFormattedTextField jFormattedTextField3;
-    private javax.swing.JFormattedTextField jFormattedTextField4;
-    private javax.swing.JFrame jFrame2;
+    private javax.swing.JComboBox<String> combo_universo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -225,10 +273,13 @@ public class HeroesPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JPanel jp_Principal;
+    private javax.swing.JFormattedTextField tf_agilidad;
+    private javax.swing.JFormattedTextField tf_agilidadM;
+    private javax.swing.JTextField tf_debilidad;
+    private javax.swing.JFormattedTextField tf_fuerza;
+    private javax.swing.JFormattedTextField tf_hp;
+    private javax.swing.JTextField tf_nombre;
+    private javax.swing.JTextField tf_poder;
     // End of variables declaration//GEN-END:variables
 }
