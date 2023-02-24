@@ -12,11 +12,12 @@ public class Personajes {
     private int agilidad;
     private int agilidad_M;
     private int HP;
+    private String universo;
 
     public Personajes() {
     }
 
-    public Personajes(String nombre, String poder, String debilidad, int fuerza, int agilidad, int agilidad_M, int HP) {
+    public Personajes(String nombre, String poder, String debilidad, int fuerza, int agilidad, int agilidad_M, int HP, String universo) {
         this.nombre = nombre;
         this.poder = poder;
         this.debilidad = debilidad;
@@ -24,6 +25,7 @@ public class Personajes {
         this.agilidad = agilidad;
         this.agilidad_M = agilidad_M;
         this.HP = HP;
+        this.universo = universo;
     }
 
     public String getNombre() {
@@ -82,10 +84,18 @@ public class Personajes {
         this.HP = HP;
     }
 
+    public String getUniverso() {
+        return universo;
+    }
+
+    public void setUniverso(String universo) {
+        this.universo = universo;
+    }
+
     @Override
     public String toString() {
-        return "Personajes{" + "nombre=" + nombre + ", poder=" + poder + ", debilidad=" + debilidad + ", fuerza=" + fuerza + ", agilidad=" + agilidad + ", agilidad_M=" + agilidad_M + ", HP=" + HP + '}';
+        return "Personajes{" + "nombre=" + nombre + ", poder=" + poder + ", debilidad=" + debilidad + ", fuerza=" + fuerza + ", agilidad=" + agilidad + ", agilidad_M=" + agilidad_M + ", HP=" + HP + ", universo=" + universo + '}';
     }
-    
+
     
 }
