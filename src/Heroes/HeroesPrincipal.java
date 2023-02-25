@@ -5,6 +5,8 @@
 package Heroes;
 
 import java.util.ArrayList;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
 
 /**
  *
@@ -46,9 +48,23 @@ ArrayList <Personajes> personajitos= new ArrayList();
         tf_agilidadM = new javax.swing.JFormattedTextField();
         bt_add = new javax.swing.JButton();
         combo_universo = new javax.swing.JComboBox<>();
+        Listar = new javax.swing.JFrame();
+        ListaPanel = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jtree_heroes = new javax.swing.JTree();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        ListillaPersonajes = new javax.swing.JList<>();
+        jLabel10 = new javax.swing.JLabel();
+        jPopupMenu1 = new javax.swing.JPopupMenu();
+        ListarPop = new javax.swing.JMenuItem();
+        eliminarPop = new javax.swing.JMenuItem();
         jp_Principal = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        bt_Agregar = new javax.swing.JButton();
+        bt_Simular = new javax.swing.JButton();
+        bt_Agregar1 = new javax.swing.JButton();
+        bt_Listar1 = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
+        jLabel9 = new javax.swing.JLabel();
 
         AgregarHeroes.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -152,6 +168,72 @@ ArrayList <Personajes> personajitos= new ArrayList();
 
         AgregarHeroes.getContentPane().add(AgregarHeroes_, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 550));
 
+        Listar.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        ListaPanel.setBackground(new java.awt.Color(102, 0, 153));
+
+        jtree_heroes.setBackground(new java.awt.Color(51, 0, 51));
+        jtree_heroes.setForeground(new java.awt.Color(204, 204, 204));
+        javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Heroes");
+        javax.swing.tree.DefaultMutableTreeNode treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Marvel");
+        treeNode1.add(treeNode2);
+        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Capcom");
+        treeNode1.add(treeNode2);
+        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Midway");
+        treeNode1.add(treeNode2);
+        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("DC");
+        treeNode1.add(treeNode2);
+        jtree_heroes.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        jScrollPane1.setViewportView(jtree_heroes);
+
+        ListillaPersonajes.setBackground(new java.awt.Color(51, 0, 51));
+        ListillaPersonajes.setForeground(new java.awt.Color(204, 204, 204));
+        jScrollPane2.setViewportView(ListillaPersonajes);
+
+        jLabel10.setFont(new java.awt.Font("Franklin Gothic Heavy", 0, 24)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel10.setText("Listar");
+
+        javax.swing.GroupLayout ListaPanelLayout = new javax.swing.GroupLayout(ListaPanel);
+        ListaPanel.setLayout(ListaPanelLayout);
+        ListaPanelLayout.setHorizontalGroup(
+            ListaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ListaPanelLayout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ListaPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel10)
+                .addGap(216, 216, 216))
+        );
+        ListaPanelLayout.setVerticalGroup(
+            ListaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ListaPanelLayout.createSequentialGroup()
+                .addContainerGap(33, Short.MAX_VALUE)
+                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24)
+                .addGroup(ListaPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 362, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(52, 52, 52))
+        );
+
+        Listar.getContentPane().add(ListaPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 500));
+
+        ListarPop.setText("Listar");
+        ListarPop.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ListarPopActionPerformed(evt);
+            }
+        });
+        jPopupMenu1.add(ListarPop);
+
+        eliminarPop.setText("jMenuItem2");
+        jPopupMenu1.add(eliminarPop);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(102, 0, 0));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -162,18 +244,47 @@ ArrayList <Personajes> personajitos= new ArrayList();
         jLabel1.setFont(new java.awt.Font("Gill Sans Ultra Bold", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Marvel- vs -Dc- vs -Capcom- vs -MK");
-        jp_Principal.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, -1, -1));
+        jp_Principal.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, -1, -1));
 
-        bt_Agregar.setBackground(new java.awt.Color(255, 51, 51));
-        bt_Agregar.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 24)); // NOI18N
-        bt_Agregar.setForeground(new java.awt.Color(102, 0, 0));
-        bt_Agregar.setText("Agregar Personaje");
-        bt_Agregar.addMouseListener(new java.awt.event.MouseAdapter() {
+        bt_Simular.setBackground(new java.awt.Color(255, 51, 51));
+        bt_Simular.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 24)); // NOI18N
+        bt_Simular.setForeground(new java.awt.Color(102, 0, 0));
+        bt_Simular.setText("Simulacion");
+        bt_Simular.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                bt_AgregarMouseClicked(evt);
+                bt_SimularMouseClicked(evt);
             }
         });
-        jp_Principal.add(bt_Agregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 90, 230, 60));
+        jp_Principal.add(bt_Simular, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 360, 230, 60));
+
+        bt_Agregar1.setBackground(new java.awt.Color(255, 51, 51));
+        bt_Agregar1.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 24)); // NOI18N
+        bt_Agregar1.setForeground(new java.awt.Color(102, 0, 0));
+        bt_Agregar1.setText("Agregar Personaje");
+        bt_Agregar1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_Agregar1MouseClicked(evt);
+            }
+        });
+        jp_Principal.add(bt_Agregar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 120, 230, 60));
+
+        bt_Listar1.setBackground(new java.awt.Color(255, 51, 51));
+        bt_Listar1.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 24)); // NOI18N
+        bt_Listar1.setForeground(new java.awt.Color(102, 0, 0));
+        bt_Listar1.setText("Listar Personajes");
+        bt_Listar1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_Listar1MouseClicked(evt);
+            }
+        });
+        jp_Principal.add(bt_Listar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 230, 60));
+
+        jSeparator1.setBackground(new java.awt.Color(255, 0, 0));
+        jSeparator1.setForeground(new java.awt.Color(255, 0, 0));
+        jp_Principal.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 700, 20));
+
+        jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel\\Downloads\\heroe (1).png")); // NOI18N
+        jp_Principal.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, -1, -1));
 
         getContentPane().add(jp_Principal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 500));
 
@@ -200,11 +311,10 @@ ArrayList <Personajes> personajitos= new ArrayList();
         // TODO add your handling code here:
     }//GEN-LAST:event_combo_universoActionPerformed
 
-    private void bt_AgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_AgregarMouseClicked
-        //Ir a la pantalla de agregar
-        AgregarHeroes.setVisible(true);
-        AgregarHeroes.pack();
-    }//GEN-LAST:event_bt_AgregarMouseClicked
+    private void bt_SimularMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_SimularMouseClicked
+        //Ir a la pantalla de simular
+        
+    }//GEN-LAST:event_bt_SimularMouseClicked
 
     private void bt_addMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_addMouseClicked
         String nombreP=tf_nombre.getText();
@@ -214,15 +324,50 @@ ArrayList <Personajes> personajitos= new ArrayList();
         int agilidadP= Integer.parseInt(tf_agilidad.getText());
         int agilidadMP= Integer.parseInt(tf_agilidadM.getText());
         int hpP= Integer.parseInt(tf_hp.getText());
-        String universoP=((String)(combo_universo.getSelectedItem()));
+        String universoP=(String)combo_universo.getSelectedItem();
         
         Personajes heroes= new Personajes(nombreP,poderP,debilidadP,fuerzaP,agilidadP,agilidadMP,hpP,universoP);
         personajitos.add(heroes);
+        
+        DefaultTreeModel M= (DefaultTreeModel) jtree_heroes.getModel();
+        DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) M.getRoot();
+        
+        if(universoP == "Marvel"){
+            //Le puse universe por steven universe jajajaj
+            DefaultMutableTreeNode universe = (DefaultMutableTreeNode) raiz.getChildAt(0);
+            DefaultMutableTreeNode nPersonajes= new DefaultMutableTreeNode (heroes);
+            universe.add(nPersonajes);
+            jtree_heroes.add(heroes);
+        }
+        
+        tf_nombre.setText("");
+        tf_poder.setText("");
+        tf_debilidad.setText("");
+        tf_fuerza.setText("");
+        tf_agilidad.setText("");
+        tf_agilidadM.setText("");
+        tf_hp.setText("");
+        
     }//GEN-LAST:event_bt_addMouseClicked
 
     private void tf_poderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_poderActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tf_poderActionPerformed
+
+    private void bt_Agregar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_Agregar1MouseClicked
+        //Agregar cosas
+        AgregarHeroes.setVisible(true);
+        AgregarHeroes.pack();
+    }//GEN-LAST:event_bt_Agregar1MouseClicked
+
+    private void bt_Listar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_Listar1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bt_Listar1MouseClicked
+
+    private void ListarPopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListarPopActionPerformed
+        // TODO add your handling code here:
+        //Action
+    }//GEN-LAST:event_ListarPopActionPerformed
 
     /**
      * @param args the command line arguments
@@ -262,10 +407,18 @@ ArrayList <Personajes> personajitos= new ArrayList();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JFrame AgregarHeroes;
     private javax.swing.JPanel AgregarHeroes_;
-    private javax.swing.JButton bt_Agregar;
+    private javax.swing.JPanel ListaPanel;
+    private javax.swing.JFrame Listar;
+    private javax.swing.JMenuItem ListarPop;
+    private javax.swing.JList<String> ListillaPersonajes;
+    private javax.swing.JButton bt_Agregar1;
+    private javax.swing.JButton bt_Listar1;
+    private javax.swing.JButton bt_Simular;
     private javax.swing.JButton bt_add;
     private javax.swing.JComboBox<String> combo_universo;
+    private javax.swing.JMenuItem eliminarPop;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -273,7 +426,13 @@ ArrayList <Personajes> personajitos= new ArrayList();
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPopupMenu jPopupMenu1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JPanel jp_Principal;
+    private javax.swing.JTree jtree_heroes;
     private javax.swing.JFormattedTextField tf_agilidad;
     private javax.swing.JFormattedTextField tf_agilidadM;
     private javax.swing.JTextField tf_debilidad;
