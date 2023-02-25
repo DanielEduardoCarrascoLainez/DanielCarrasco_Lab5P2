@@ -337,7 +337,7 @@ ArrayList <Personajes> personajitos= new ArrayList();
             DefaultMutableTreeNode universe = (DefaultMutableTreeNode) raiz.getChildAt(0);
             DefaultMutableTreeNode nPersonajes= new DefaultMutableTreeNode (heroes);
             universe.add(nPersonajes);
-            jtree_heroes.add(heroes);
+            jtree_heroes.
         }
         
         tf_nombre.setText("");
